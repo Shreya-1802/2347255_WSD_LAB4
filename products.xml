@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="ecommerce.xsd">
+
+  <product>
+    <productID>123</productID>
+    <productName>Smartphone</productName>
+    <price>299.99</price>
+    <quantity>50</quantity>
+    <category>Electronics</category>
+  </product>
+  
+  <product>
+    <productID>456</productID>
+    <productName>T-shirt</productName>
+    <price>15.99</price>
+    <quantity>200</quantity>
+    <category>Clothing</category>
+  </product>
+  
+  <product>
+    <productID>789</productID>
+    <productName>Python Programming</productName>
+    <price>29.99</price>
+    <quantity>10</quantity>
+    <category>Books</category>
+  </product>
+  
+</products>

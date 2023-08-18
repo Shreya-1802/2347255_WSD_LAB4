@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Define simple types with restrictions -->
+  <xs:simpleType name="productNameType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="priceType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="5"/>
+      <xs:maxInclusive value="500"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="quantityType">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="1000"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="categoryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Electronics"/>
+      <xs:enumeration value="Clothing"/>
+      <xs:enumeration value="Books"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <!-- Define complex type for product -->
+  <xs:complexType name="productType">
+    <xs:sequence>
+      <xs:element name="productID" type="xs:string"/>
+      <xs:element name="productName" type="productNameType"/>
+      <xs:element name="price" type="priceType"/>
+      <xs:element name="quantity" type="quantityType"/>
+      <xs:element name="category" type="categoryType"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- Define root element -->
+  <xs:element name="products">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="product" type="productType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

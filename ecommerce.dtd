@@ -1,0 +1,10 @@
+<!ELEMENT products (product*)>
+<!ELEMENT product (productID, productName, price, quantity, category)>
+<!ELEMENT productID (#PCDATA)>
+<!ELEMENT productName (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+
+<!ATTLIST product
+          xmlns CDATA #IMPLIED>
